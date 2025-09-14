@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surpresa ❤️</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #ffe6eb;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2, p {
+      color: #d6336c;
+    }
+
+    button {
+      margin: 10px;
+      padding: 15px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #ff99b6;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      background-color: #ff7a9b;
+    }
+
+    #nao {
+      background-color: #ccc;
+      color: #333;
+    }
+
+    #nao:hover {
+      background-color: #999;
+    }
+
+    #mensagem, #final, #gatoBravo {
+      display: none;
+    }
+
+    img {
+      max-width: 300px;
+      border-radius: 15px;
+      margin-top: 15px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Tenho algo pra te dizer ❤️</h1>
+  <button id="nao">Não aperte aqui 😳</button>
+  <button id="sim">Aperte aqui 😍</button>
+
+  <div id="mensagem">
+    <h2>Você fez uma boa escolha! 🥰</h2>
+    <button id="proximoBotao">Aperte aqui para prosseguir ➡️</button>
+  </div>
+
+  <div id="gatoBravo">
+    <h2>Eu disse para não apertar! 😾</h2>
+    <p>Volte e escolha a outra opção! 😡</p>
+    <img src="https://i.pinimg.com/originals/34/fb/33/34fb33a02a9f353609b23f3fb3a17a5d.jpg" alt="Gato bravo">
+    <br>
+    <button onclick="location.reload()">Voltar</button>
+  </div>
+
+  <div id="final">
+    <h2>Você é incrível ❤️</h2>
+    <p>Obrigado por fazer parte da minha vida e por ter feito o meu dia tão especial ontem. 🥰</p>
+    <img src="https://i.pinimg.com/originals/07/8e/39/078e39f543f4082b7f9cb2d85ffb7db8.jpg" alt="Gatinho fofo">
+  </div>
+
+  <script>
+    const nao = document.getElementById("nao");
+    const sim = document.getElementById("sim");
+    const mensagem = document.getElementById("mensagem");
+    const proximo = document.getElementById("proximoBotao");
+    const final = document.getElementById("final");
+    const gatoBravo = document.getElementById("gatoBravo");
+
+    nao.addEventListener("click", function() {
+      sim.style.display = "none";
+      nao.style.display = "none";
+      gatoBravo.style.display = "block";
+    });
+
+    sim.addEventListener("click", function() {
+      sim.style.display = "none";
+      nao.style.display = "none";
+      mensagem.style.display = "block";
+    });
+
+    proximo.addEventListener("click", function() {
+      mensagem.style.display = "none";
+      final.style.display = "block";
+    });
+  </script>
+</body>
+</html>
